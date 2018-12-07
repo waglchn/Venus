@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IXMLReader.h
 //@brief: xml file reader
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:00
 //-------------------------------------------------------
 #ifndef __I_XML_READER_H_INCLUDED__

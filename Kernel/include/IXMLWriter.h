@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IXMLWriter.h
 //@brief: xml file writer
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:59
 //-------------------------------------------------------
 #ifndef __I_XML_WRITER_H_INCLUDED__

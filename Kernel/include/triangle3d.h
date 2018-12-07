@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: triangle3d.h
 //@brief: triangle3d
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:57
 //-------------------------------------------------------
 #ifndef __TRIANGLE_3D_H_INCLUDED__

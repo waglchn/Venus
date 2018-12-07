@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: heapsort.h
 //@brief: quick heap sort
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:51
 //-------------------------------------------------------
 #ifndef __HEAPSORT_H_INCLUDED__

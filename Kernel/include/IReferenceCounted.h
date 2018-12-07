@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IReferenceCounted.h
 //@brief: base object 
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:00
 //-------------------------------------------------------
 #ifndef __I_IREFERENCE_COUNTED_H_INCLUDED__

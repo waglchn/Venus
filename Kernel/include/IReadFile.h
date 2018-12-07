@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IReadFile.h
 //@brief: file reader interface
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:00
 //-------------------------------------------------------
 #ifndef __I_READ_FILE_H_INCLUDED__

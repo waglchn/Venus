@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: aabbox3d.h
 //@brief: aabbox object volume range
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:48
 //-------------------------------------------------------
 #ifndef __AABBOX_3D_H_INCLUDED__

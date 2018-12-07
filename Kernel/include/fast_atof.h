@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: fast_atof.h
 //@brief: fast_atof
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:50
 //-------------------------------------------------------
 #ifndef __FAST_ATOF_H_INCLUDED__

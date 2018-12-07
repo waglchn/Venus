@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: coreutil.h
 //@brief: core util 
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:48
 //-------------------------------------------------------
 #ifndef __CORE_UTIL_H_INCLUDED__

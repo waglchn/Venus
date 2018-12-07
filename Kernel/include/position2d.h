@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: position2d.h
 //@brief: position2d
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:58
 //-------------------------------------------------------
 #ifndef __POSITION_H_INCLUDED__

@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IWriteFile.h
 //@brief: file writer interface
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:00
 //-------------------------------------------------------
 #ifndef __I_WRITE_FILE_H_INCLUDED__

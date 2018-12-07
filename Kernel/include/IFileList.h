@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IFileList.h
 //@brief: file list
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:02
 //-------------------------------------------------------
 #ifndef __I_FILE_LIST_H_INCLUDED__

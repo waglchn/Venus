@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IRandomizer.h
 //@brief: randomizer
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:01
 //-------------------------------------------------------
 #ifndef __I_RANDOMIZER_H_INCLUDED__

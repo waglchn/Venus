@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IFileSystem.h
 //@brief: file system
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-18:01
 //-------------------------------------------------------
 #ifndef __I_FILE_SYSTEM_H_INCLUDED__

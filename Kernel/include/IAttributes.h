@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IAttributes.h
 //@brief: attribute interface
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:52
 //-------------------------------------------------------
 #ifndef __I_ATTRIBUTES_H_INCLUDED__

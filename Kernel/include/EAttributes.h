@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: EAttributes.h
 //@brief: attribute types
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:50
 //-------------------------------------------------------
 #ifndef __E_ATTRIBUTES_H_INCLUDED__

@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: IAttributeExchangingObject.h
 //@brief: io attribute exchangeing object
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:51
 //-------------------------------------------------------
 #ifndef __I_ATTRIBUTE_EXCHANGING_OBJECT_H_INCLUDED__

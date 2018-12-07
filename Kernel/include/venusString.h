@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: venusString.h
 //@brief: string
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:56
 //-------------------------------------------------------
 #ifndef __STRING_H_INCLUDED__

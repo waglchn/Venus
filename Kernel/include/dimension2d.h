@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: dimension2d.h
 //@brief: dimension2d
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:49
 //-------------------------------------------------------
 #ifndef __DIMENSION2D_H_INCLUDED__

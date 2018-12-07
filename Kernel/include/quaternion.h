@@ -1,7 +1,7 @@
 //-------------------------------------------------------
 //@file: quaternion.h
 //@brief: quaternion
-//@author: wanglc
+//@author: venus
 //@date: 2018/12/07-17:58
 //-------------------------------------------------------
 #ifndef __QUATERNION_H_INCLUDED__
