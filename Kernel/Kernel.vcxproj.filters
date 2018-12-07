@@ -16,13 +16,130 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Compiler.h">
+    <ClInclude Include="include\aabbox3d.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\Types.h">
+    <ClInclude Include="include\compiler.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\Venus.h">
+    <ClInclude Include="include\coreutil.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\dimension2d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EAttributes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fast_atof.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\heapsort.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IAttributeExchangingObject.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IAttributes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IFileArchive.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IFileList.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IFileSystem.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ILogger.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IRandomizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IReadFile.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IReferenceCounted.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ITimer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IWriteFile.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IXMLReader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IXMLWriter.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\line2d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\line3d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\matrix4.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\path.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plane3d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\position2d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\quaternion.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rect.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SColor.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\triangle3d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vector2d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vector3d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venus.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusArray.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusList.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusMap.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusMath.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusString.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusTypes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusUnpack.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusXML.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TAllocator.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
