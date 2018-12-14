@@ -26,7 +26,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -72,7 +72,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(ProjectDir)..\..\publish\Kernel\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)..\..\publish\Kernel\temps\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>I:\GitHub\Venus\Kernel\include;$(IncludePath)</IncludePath>
+    <IncludePath>I:\GitHub\Venus\Kernel\include;I:\GitHub\Venus\Kernel\pThread\include;$(IncludePath)</IncludePath>
+    <LibraryPath>I:\GitHub\Venus\Kernel\pThread\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>I:\GitHub\Venus\Kernel\include;$(IncludePath)</IncludePath>
@@ -95,6 +96,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -171,7 +175,9 @@
     <ClInclude Include="include\venusList.h" />
     <ClInclude Include="include\venusMap.h" />
     <ClInclude Include="include\venusMath.h" />
+    <ClInclude Include="include\venusMutex.h" />
     <ClInclude Include="include\venusString.h" />
+    <ClInclude Include="include\venusThread.h" />
     <ClInclude Include="include\venusTypes.h" />
     <ClInclude Include="include\venusUnpack.h" />
     <ClInclude Include="include\venusXML.h" />

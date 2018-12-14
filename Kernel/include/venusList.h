@@ -15,8 +15,6 @@ namespace venus
 {
 	namespace core
 	{
-
-
 		//! Doubly linked list template.
 		template <class T>
 		class list

@@ -142,5 +142,11 @@
     <ClInclude Include="include\TAllocator.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\venusMutex.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\venusThread.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
