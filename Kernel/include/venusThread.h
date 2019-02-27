@@ -29,30 +29,30 @@ namespace venus
 	public:
 		VenusThread()
 		{
-			meState = TS_NONE;
-			mbopened = false;
-			mbSilented = false;
-			mbCanceled = false;
+			eState = TS_NONE;
+			opened = false;
+			silented = false;
+			canceled = false;
 		}
 		~VenusThread()
 		{
-			meState = TS_NONE;
-			mbopened = false;
-			mbSilented = false;
-			mbCanceled = false;
+			eState = TS_NONE;
+			opened = false;
+			silented = false;
+			canceled = false;
 		}
 	
 	public:
 		///开启线程任务
 		void open()
 		{
-			if (mbopened)
+			if (opened)
 				return;
 			
-			int error = pthread_create(&mthreadId, NULL, thread_main, this);
+			int error = pthread_create(&threadId, NULL, thread_main, this);
 			if (error == 0)
 			{
-				mbopened = true;
+				opened = true;
 			}
 			else
 			{
@@ -63,30 +63,30 @@ namespace venus
 		///取消线程
 		void cancel()
 		{
-			if (!mbopened)
+			if (!opened)
 				return;
 
-			mbCanceled = true;
+			canceled = true;
 			activate();
-			pthread_join(mthreadId, NULL);
-			mbopened = false;
+			pthread_join(threadId, NULL);
+			opened = false;
 		}
 		void silent()
 		{
-			if (!mbopened)
+			if (!opened)
 				return;
 
-			mbSilented = true;
+			silented = true;
 		}
 		void activate()
 		{
-			if (mbSilented)
+			if (silented)
 			{
-				mbSilented = false;
+				silented = false;
 			}
-			if (meState == TS_WAIT)
+			if (eState == TS_WAIT)
 			{
-				mmutexThread.notify();
+				mutexThread.notify();
 			}
 		}
 	protected:
@@ -94,26 +94,26 @@ namespace venus
 		{
 			setState(TS_WAIT);
 			///立即等待
-			mmutexThread.wait();
+			mutexThread.wait();
 			setState(TS_RUNNING);
 		}
 		void timedWait(long time)
 		{
 			///立即等待一段时间
 			setState(TS_WAIT);
-			mmutexThread.timedWait(time);
+			mutexThread.timedWait(time);
 			setState(TS_RUNNING);
 		}
 		bool working()
 		{
-			if (mbCanceled)
+			if (canceled)
 			{
 				return false;
 			}
-			else if (mbSilented)
+			else if (silented)
 			{
 				setState(TS_WAIT);
-				mmutexThread.wait();
+				mutexThread.wait();
 				setState(TS_RUNNING);
 			}
 			
@@ -122,11 +122,11 @@ namespace venus
 
 		void setState(ThreadState eState)
 		{
-			meState = eState;
+			eState = eState;
 		}
 		ThreadState getState()
 		{
-			return meState;
+			return eState;
 		}
 	public:
 		virtual void onEntry()
@@ -142,13 +142,12 @@ namespace venus
 
 		}
 	private: 
-		Mutex mmutexWait;
-		bool mbopened;
-		bool mbSilented;
-		bool mbCanceled;
-		ConditionMutex mmutexThread;
-		ThreadState meState;
-		pthread_t mthreadId;
+		bool opened;
+		bool silented;
+		bool canceled;
+		ConditionMutex mutexThread;
+		ThreadState eState;
+		pthread_t threadId;
 	};
 }
 
