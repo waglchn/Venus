@@ -9,16 +9,16 @@ namespace venus
 		enum VARTYPE
 		{
 			VT_NONE = 0,
-			VT_SBYTE,
-			VT_BYTE,
-			VT_SHORT,
-			VT_USHORT,
-			VT_INT,
-			VT_UINT,
-			VT_LONG,
-			VT_ULONG,
-			VT_FLOAT,
-			VT_DOUBLE,
+			VT_S8,
+			VT_U8,
+			VT_S16,
+			VT_U16,
+			VT_S32,
+			VT_U32,
+			VT_S64,
+			VT_U64,
+			VT_F32,
+			VT_F64,
 			VT_STRINGC,
 			VT_STRINGW,
 			VT_USERDATA,
@@ -38,7 +38,7 @@ namespace venus
 			{
 			}
 		public:
-			bool SetSByte(u8 index, s8& value)
+			bool SetS8(u8 index, s8& value)
 			{
 				u32 address = GetVarAddress(index );
 				if (index >= maxVarIndex)
@@ -51,11 +51,11 @@ namespace venus
 					maxVarIndex = index + 1;
 				}
 				
-				dataBuffer[address] = VT_SBYTE;
+				dataBuffer[address] = VT_S8;
 				dataBuffer[address + 1] = (u8)value;
 				return true;
 			}
-			bool SetByte(u8 index, u8& value)
+			bool SetU8(u8 index, u8& value)
 			{
 				u32 address = GetVarAddress(index );
 				if (index >= maxVarIndex)
@@ -67,11 +67,11 @@ namespace venus
 
 					maxVarIndex = index + 1;
 				}
-				dataBuffer[address] = VT_BYTE;
+				dataBuffer[address] = VT_U8;
 				dataBuffer[address + 1] = (u8)value;
 				return true;
 			}
-			bool SetShort(u8 index, s16& value)
+			bool SetS16(u8 index, s16& value)
 			{
 				u32 address = GetVarAddress(index );
 				if (index >= maxVarIndex)
@@ -83,12 +83,12 @@ namespace venus
 
 					maxVarIndex = index + 1;
 				}
-				dataBuffer[address] = VT_SHORT;
+				dataBuffer[address] = VT_S16;
 				dataBuffer[address + 2] = (u8)((u16)value & 0xFF);
 				dataBuffer[address + 1] = (u8)(((u16)value >> 8) & 0xFF);
 				return true;
 			}
-			bool SetUShort(u8 index, u16& value)
+			bool SetUS16(u8 index, u16& value)
 			{
 				u32 address = GetVarAddress(index);
 				if (index >= maxVarIndex)
@@ -100,12 +100,12 @@ namespace venus
 
 					maxVarIndex = index + 1;
 				}
-				dataBuffer[address] = VT_USHORT;
+				dataBuffer[address] = VT_U16;
 				dataBuffer[address + 2] = (u8)(value & 0xFF);
 				dataBuffer[address + 1] = (u8)((value >> 8) & 0xFF);
 				return true;
 			}
-			bool SetInt(u8 index, s32& value)
+			bool Sets32(u8 index, s32& value)
 			{
 				u32 address = GetVarAddress(index );
 				if (index >= maxVarIndex)
@@ -117,7 +117,7 @@ namespace venus
 
 					maxVarIndex = index + 1;
 				}
-				dataBuffer[address] = VT_INT;
+				dataBuffer[address] = VT_S32;
 				dataBuffer[address + 4] = (u8)((u32)value & 0xFF);
 				dataBuffer[address + 3] = (u8)(((u32)value >> 8) & 0xFF);
 				dataBuffer[address + 2] = (u8)(((u32)value >> 16) & 0xFF);
@@ -125,7 +125,7 @@ namespace venus
 
 				return true;
 			}
-			bool SetUInt(u8 index, u32& value)
+			bool SetUs32(u8 index, u32& value)
 			{
 				u32 address = GetVarAddress(index );
 				if (index >= maxVarIndex)
@@ -137,14 +137,14 @@ namespace venus
 
 					maxVarIndex = index + 1;
 				}
-				dataBuffer[address] = VT_UINT;
+				dataBuffer[address] = VT_U32;
 				dataBuffer[address + 4] = (u8)(value & 0xFF);
 				dataBuffer[address + 3] = (u8)((value >> 8) & 0xFF);
 				dataBuffer[address + 2] = (u8)((value >> 16) & 0xFF);
 				dataBuffer[address + 1] = (u8)((value >> 24) & 0xFF);
 				return true;
 			}
-			bool SetLong(u8 index, s64& value)
+			bool Sets64(u8 index, s64& value)
 			{
 				if (index < maxVarIndex)
 				{
@@ -169,14 +169,14 @@ namespace venus
 					///新设置
 					maxVarIndex = index + 1;
 					u32 address = bufferCursor;
-					SetAddress(index, VT_LONG, address);
+					SetAddress(index, VT_S64, address);
 					memcpy(dataBuffer + address, &value, sizeof(s64));
 					bufferCursor +=  sizeof(s64);
 				}
 				
 				return true;
 			}
-			bool SetULong(u8 index, u64& value)
+			bool SetUs64(u8 index, u64& value)
 			{
 				if (index < maxVarIndex)
 				{
@@ -201,14 +201,14 @@ namespace venus
 					///新设置
 					maxVarIndex = index + 1;
 					u32 address = bufferCursor;
-					SetAddress(index, VT_ULONG, address);
+					SetAddress(index, VT_U64, address);
 					memcpy(dataBuffer + address, &value, sizeof(u64));
 					bufferCursor += sizeof(u64);
 				}
 
 				return true;
 			}
-			bool SetFloat(u8 index, f32& value)
+			bool SetF32(u8 index, f32& value)
 			{
 				if (index < maxVarIndex)
 				{
@@ -233,14 +233,14 @@ namespace venus
 					///新设置
 					maxVarIndex = index + 1;
 					u32 address = bufferCursor;
-					SetAddress(index, VT_FLOAT, address);
+					SetAddress(index, VT_F32, address);
 					memcpy(dataBuffer + address, &value, sizeof(f32));
 					bufferCursor += sizeof(f32);
 				}
 
 				return true;
 			}
-			bool SetDouble(u8 index, f64& value)
+			bool SetF64(u8 index, f64& value)
 			{
 				if (index < maxVarIndex)
 				{
@@ -266,7 +266,7 @@ namespace venus
 					maxVarIndex = index + 1;
 					
 					u32 address = bufferCursor;
-					SetAddress(index, VT_DOUBLE, address);
+					SetAddress(index, VT_F64, address);
 					memcpy(dataBuffer + address, &value, sizeof(f64));
 					bufferCursor += sizeof(f64);
 				}
@@ -373,7 +373,7 @@ namespace venus
 			}
 		public:
 			
-			bool GetSByte(u8 index, s8& value)
+			bool GetS8(u8 index, s8& value)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -381,7 +381,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_SBYTE)
+				if (dataBuffer[address] != VT_S8)
 				{
 					return false;
 				}
@@ -390,7 +390,7 @@ namespace venus
 
 				return true;
 			}
-			bool GetByte(u8 index, u8& value)
+			bool GetU8(u8 index, u8& value)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -398,7 +398,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_BYTE)
+				if (dataBuffer[address] != VT_U8)
 				{
 					return false;
 				}
@@ -407,7 +407,7 @@ namespace venus
 
 				return true;
 			}
-			bool GetShort(u8 index, s16& value)
+			bool GetS16(u8 index, s16& value)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -415,7 +415,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_SHORT)
+				if (dataBuffer[address] != VT_S16)
 				{
 					return false;
 				}
@@ -427,7 +427,7 @@ namespace venus
 				return true;
 			}
 
-			bool GetUShort(u8 index, u16& value)
+			bool GetU16(u8 index, u16& value)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -435,7 +435,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_USHORT)
+				if (dataBuffer[address] != VT_U16)
 				{
 					return false;
 				}
@@ -444,7 +444,7 @@ namespace venus
 				value = ((value<<8)|dataBuffer[address + 2]);
 				return true;
 			}
-			bool GetInt(u8 index, s32& value)
+			bool GetS32(u8 index, s32& value)
 			{
 				if (index > maxVarIndex)
 				{
@@ -452,7 +452,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_INT)
+				if (dataBuffer[address] != VT_S32)
 				{
 					return false;
 				}
@@ -466,7 +466,7 @@ namespace venus
 
 				return true;
 			}
-			bool GetUInt(u8 index, u32& value)
+			bool GetU32(u8 index, u32& value)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -474,7 +474,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_UINT)
+				if (dataBuffer[address] != VT_U32)
 				{
 					return false;
 				}
@@ -486,13 +486,13 @@ namespace venus
 
 				return true;
 			}
-			bool GetLong(u8 index, s64& value)
+			bool GetS64(u8 index, s64& value)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_LONG)
+					if (type != VT_S64)
 					{
 						return false;
 					}
@@ -502,13 +502,13 @@ namespace venus
 				
 				return false;
 			}
-			bool GetULong(u8 index, u64& value)
+			bool GetU64(u8 index, u64& value)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_ULONG)
+					if (type != VT_U64)
 					{
 						return false;
 					}
@@ -518,13 +518,13 @@ namespace venus
 
 				return false;
 			}
-			bool GetFloat(u8 index, f32& value)
+			bool GetF32(u8 index, f32& value)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_FLOAT)
+					if (type != VT_F32)
 					{
 						return false;
 					}
@@ -534,13 +534,13 @@ namespace venus
 
 				return false;
 			}
-			bool GetDouble(u8 index, f64& value)
+			bool GetF64(u8 index, f64& value)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_DOUBLE)
+					if (type != VT_F64)
 					{
 						return false;
 					}
@@ -603,7 +603,7 @@ namespace venus
 				return 0;
 			}
 		public:
-			s8 GetSByte(u8 index)
+			s8 GetS8(u8 index)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -611,14 +611,14 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_SBYTE)
+				if (dataBuffer[address] != VT_S8)
 				{
 					return false;
 				}
 
 				return (s8)dataBuffer[address + 1];
 			}
-			u8 GetByte(u8 index)
+			u8 GetU8(u8 index)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -626,14 +626,14 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_BYTE)
+				if (dataBuffer[address] != VT_U8)
 				{
 					return 0;
 				}
 
 				return dataBuffer[address + 1];
 			}
-			s16 GetShort(u8 index)
+			s16 GetS16(u8 index)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -641,7 +641,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_SHORT)
+				if (dataBuffer[address] != VT_S16)
 				{
 					return 0;
 				}
@@ -652,7 +652,7 @@ namespace venus
 				return (s16)sValue;
 			}
 
-			u16 GetUShort(u8 index)
+			u16 GetU16(u8 index)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -660,7 +660,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_USHORT)
+				if (dataBuffer[address] != VT_U16)
 				{
 					return 0;
 				}
@@ -669,7 +669,7 @@ namespace venus
 				value = ((value << 8) | dataBuffer[base + 2]);
 				return value;
 			}
-			s32 GetInt(u8 index)
+			s32 GetS32(u8 index)
 			{
 				if (index > maxVarIndex)
 				{
@@ -677,7 +677,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_INT)
+				if (dataBuffer[address] != VT_S32)
 				{
 					return 0;
 				}
@@ -689,7 +689,7 @@ namespace venus
 
 				return (s32)uValue;
 			}
-			u32 GetUInt(u8 index)
+			u32 GetU32(u8 index)
 			{
 				if (index >= maxVarIndex)
 				{
@@ -697,7 +697,7 @@ namespace venus
 				}
 
 				u32 address = GetVarAddress(index);
-				if (dataBuffer[address] != VT_UINT)
+				if (dataBuffer[address] != VT_U32)
 				{
 					return 0;
 				}
@@ -709,13 +709,13 @@ namespace venus
 
 				return value;
 			}
-			s64 GetLong(u8 index)
+			s64 GetS64(u8 index)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_LONG)
+					if (type != VT_S64)
 					{
 						return 0;
 					}
@@ -727,13 +727,13 @@ namespace venus
 
 				return 0;
 			}
-			u64 GetULong(u8 index)
+			u64 GetU64(u8 index)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_ULONG)
+					if (type != VT_U64)
 					{
 						return 0;
 					}
@@ -745,13 +745,13 @@ namespace venus
 
 				return 0;
 			}
-			f32 GetFloat(u8 index)
+			f32 GetF32(u8 index)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_FLOAT)
+					if (type != VT_F32)
 					{
 						return 0.0f;
 					}
@@ -762,13 +762,13 @@ namespace venus
 
 				return 0.0f;
 			}
-			f64 GetDouble(u8 index)
+			f64 GetF64(u8 index)
 			{
 				u8 type;
 				u32 address;
 				if (GetInnerAddress(index, type, address))
 				{
-					if (type != VT_DOUBLE)
+					if (type != VT_F64)
 					{
 						return 0.0f;
 					}
@@ -944,13 +944,13 @@ namespace venus
 			{
 				switch (type)
 				{
-				case VT_LONG:
+				case VT_S64:
 					return sizeof(s64);
-				case VT_ULONG:
+				case VT_U64:
 					return sizeof(u64);
-				case VT_FLOAT:
+				case VT_F32:
 					return sizeof(f32);
-				case VT_DOUBLE:
+				case VT_F64:
 					return sizeof(f64);
 				case VT_STRINGC:
 				case VT_STRINGW:
@@ -1032,8 +1032,8 @@ namespace venus
 			//buffer的末端指针
 			u32 bufferCursor;
 		};
-		typedef VarList<512> CVarList;
 
+		typedef VarList<512> CVarList;
 	}
 }
 #endif 

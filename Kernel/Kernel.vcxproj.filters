@@ -151,5 +151,14 @@
     <ClInclude Include="Statistics.h">
       <Filter>source</Filter>
     </ClInclude>
+    <ClInclude Include="include\archive.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\streamReader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\streamWriter.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

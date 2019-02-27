@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\aabbox3d.h" />
+    <ClInclude Include="include\archive.h" />
     <ClInclude Include="include\compiler.h" />
     <ClInclude Include="include\coreutil.h" />
     <ClInclude Include="include\dimension2d.h" />
@@ -166,6 +167,8 @@
     <ClInclude Include="include\quaternion.h" />
     <ClInclude Include="include\rect.h" />
     <ClInclude Include="include\SColor.h" />
+    <ClInclude Include="include\streamReader.h" />
+    <ClInclude Include="include\streamWriter.h" />
     <ClInclude Include="include\triangle3d.h" />
     <ClInclude Include="include\vector2d.h" />
     <ClInclude Include="include\vector3d.h" />
